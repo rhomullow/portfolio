@@ -6,4 +6,11 @@
 
 body {
   background: var(--body);
+  margin: 0;
+}
+
+header,
+main,
+footer {
+  margin: 0 12vw;
 }

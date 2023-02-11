@@ -1,1 +1,18 @@
-<p>header works!</p>
+<header class="header">
+  <img src="" alt="Rômulo Silva - Developer" class="header__logo" />
+
+  <ul class="header__links">
+    <li class="header__links__link" *ngFor="let link of links">
+      <a
+        [routerLink]="link.href"
+        routerLinkActive="header__links__link:active"
+        >{{ link.label }}</a
+      >
+    </li>
+  </ul>
+
+  <div class="header__actions">
+    <button class="header__actions__action"></button>
+    <button class="header__actions__action"></button>
+  </div>
+</header>

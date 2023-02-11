@@ -1,0 +1,11 @@
+.header,
+.header__links {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.header__links {
+  list-style: none;
+}
