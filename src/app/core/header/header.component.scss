@@ -1,11 +1,41 @@
-.header,
-.header__links {
+.header {
+  background-color: var(--primary-100);
+}
+
+.navbar,
+.navbar__links,
+.navbar__actions {
   display: grid;
   grid-auto-flow: column;
   gap: 20px;
   align-items: center;
 }
 
-.header__links {
+.navbar__logo {
+  position: absolute;
+  top: 0;
+  padding: 20px 0;
+}
+
+.navbar__links {
+  gap: 40px;
+  padding: 0;
   list-style: none;
+  font-weight: 700;
+  margin: 20px 0;
+  justify-content: center;
+}
+
+.navbar__links__link a {
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.navbar__actions {
+  justify-content: end;
+  gap: 0;
+}
+
+.hero {
+  padding: 70px 0;
 }

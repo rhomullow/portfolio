@@ -1,18 +1,32 @@
 <header class="header">
-  <img src="" alt="Rômulo Silva - Developer" class="header__logo" />
+  <section class="navbar">
+    <img
+      src="../../../assets/img/logo.svg"
+      alt="Rômulo Silva - Developer"
+      class="navbar__logo"
+    />
 
-  <ul class="header__links">
-    <li class="header__links__link" *ngFor="let link of links">
-      <a
-        [routerLink]="link.href"
-        routerLinkActive="header__links__link:active"
-        >{{ link.label }}</a
-      >
-    </li>
-  </ul>
+    <div></div>
 
-  <div class="header__actions">
-    <button class="header__actions__action"></button>
-    <button class="header__actions__action"></button>
-  </div>
+    <ul class="navbar__links">
+      <li class="navbar__links__link" *ngFor="let link of links">
+        <a
+          [routerLink]="link.href"
+          routerLinkActive="navbar__links__link:active"
+        >
+          {{ link.label }}
+        </a>
+      </li>
+    </ul>
+
+    <div class="navbar__actions">
+      <button class="navbar__actions__action"></button>
+      <button class="navbar__actions__action"></button>
+    </div>
+  </section>
+
+  <section class="hero">
+    <h1>Rômulo Silva</h1>
+    <p>{{ skill }}</p>
+  </section>
 </header>

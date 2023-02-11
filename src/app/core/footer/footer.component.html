@@ -1,1 +1,12 @@
-<footer>footer works!</footer>
+<footer class="footer">
+  <p>Made with PRIDE by Rômulo Silva</p>
+  <p>2023</p>
+</footer>
+
+<section class="rainbow">
+  <div
+    class="rainbow__color"
+    *ngFor="let color of colors"
+    [ngStyle]="{ 'background-color': color }"
+  ></div>
+</section>

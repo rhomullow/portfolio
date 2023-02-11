@@ -2,15 +2,17 @@
 
 * {
   color: var(--color);
+  font-family: "Inter", sans-serif;
 }
 
 body {
-  background: var(--body);
+  display: grid;
   margin: 0;
+  background: var(--body);
 }
 
 header,
 main,
 footer {
-  margin: 0 12vw;
+  padding: 0 12vw;
 }
