@@ -8,7 +8,7 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     component: HomeComponent,
-    title: 'Rômulo Silva',
+    title: 'Rômulo Silva - Portifólio',
   },
   {
     path: 'projects',
