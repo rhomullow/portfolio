@@ -1,0 +1,21 @@
+.home {
+  display: grid;
+  grid-auto-flow: column;
+  padding: 20px 12vw;
+  background-color: var(--primary-500);
+  background-image: radial-gradient(
+      at 1% 0%,
+      rgba(142, 119, 234) 0px,
+      transparent 55%
+    ),
+    radial-gradient(at 40% 90%, rgba(245, 66, 200, 1) 0px, transparent 55%),
+    radial-gradient(at 80% 13%, rgba(232, 157, 110) 0px, transparent 80%),
+    radial-gradient(at 88% 11%, rgba(239, 121, 90, 1) 0px, transparent 60%);
+}
+
+.skills {
+  display: grid;
+  gap: 10px;
+  grid-auto-flow: column;
+  width: fit-content;
+}
