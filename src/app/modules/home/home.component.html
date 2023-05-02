@@ -1,6 +1,53 @@
 <section class="home">
-  <p>home works!</p>
-  <div class=" skills">
-    <app-pill [text]="skill" *ngFor="let skill of skills"></app-pill>
+  <div class="projects">
+    <h2>Projetos</h2>
+
+    <div class="projects__items">
+      <app-project
+        *ngFor="let project of projects.slice(0, 3)"
+        [info]="project"
+      ></app-project>
+    </div>
+    <a
+      class="projects__more"
+      [routerLink]="['/projects']"
+      *ngIf="projects.length > 3"
+    >
+      VEJA MAIS <i class="projects__more__arrow"></i>
+    </a>
+  </div>
+
+  <div class="profile">
+    <div class="profile__photo"></div>
+    <div class="info">
+      <h2>Sobre mim</h2>
+      <div class="info__skills">
+        <app-pill [text]="skill" *ngFor="let skill of skills"></app-pill>
+      </div>
+      <p class="info__bio">
+        Desenvolvedor com mais de 9 anos de experiência trabalhando
+        primariamente com desenvolvimento web. Com experiências como autônomo
+        facilitando a entrada de instituições de ensino na web, soluções
+        práticas para sistemas de análises geoespaciais. Atualmente focado em
+        aplicações web desenvolvidas com Angular, Angular Material além de
+        grande domínio em CSS3 puro e com um olhar apurado para questões de
+        usabilidade e interfaces limpas.
+      </p>
+      <div class="info__contact">
+        <a href="https://www.linkedin.com/in/romulosilvam" target="_blank">
+          <img src="../../../assets/icons/linkedin.svg" alt="" />
+        </a>
+        <a href="https://github.com/rhomullow" target="_blank">
+          <img src="../../../assets/icons/github.svg" alt="" />
+        </a>
+        <a href="mailto:romulo.sm15@gmail.com" target="_blank">
+          <img src="../../../assets/icons/email.svg" alt="" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="certifications" id="certified">
+    <h2>Certificados</h2>
   </div>
 </section>

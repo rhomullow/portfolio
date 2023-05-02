@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,50 +7,57 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor() { }
+  @ViewChild('heroSkills') heroSkills!: ElementRef;
+
+  constructor(private router: Router) { }
 
   links = [
     { label: 'Início', href: ['/'] },
     { label: 'Projetos', href: ['/projects'] },
-    { label: 'Certificados', href: ['#certified'] },
   ];
 
   skill = '';
   skills = ['frontend developer', 'UX designer like', 'responsive UI', 'angular components'];
-  intervalToText!: any
+  promiseChar = Promise.resolve();
 
-  changeSkillOnHero() {
-    let interval = 5000;
-    let promise = Promise.resolve();
+  startTextAnimation() {
+    this.skills.forEach((word) => {
+      word.split('').forEach((char, indexChar) => {
+        this.promiseChar = this.promiseChar.then(() => {
+          this.skill += char;
+          return new Promise(resolve => {
+            if (indexChar === word.length - 1) {
+              setTimeout(resolve, indexChar * 100);
 
-    this.skills.forEach((string) => {
-      promise = promise.then(() => {
+              if (this.heroSkills)
+                setTimeout(() => { this.heroSkills.nativeElement.classList.add('hero__skills--completed'); }, indexChar * 25);
 
-        let promiseChar = Promise.resolve();
-
-        string.split('').forEach((char) => {
-
-          promiseChar = promiseChar.then(() => {
-            this.skill = this.skill.concat(char);
-
-            return new Promise((resolveChar) => {
-              setTimeout(resolveChar, string.length * 6);
-            });
+            } else {
+              setTimeout(resolve, 200);
+              if (this.heroSkills) this.heroSkills.nativeElement.classList.remove('hero__skills--completed');
+            }
           });
-        })
-
-        this.skill = ''
-
-        return new Promise((resolve) => {
-          setTimeout(resolve, interval);
         });
       });
-    });
 
+      this.promiseChar.then(() => {
+        this.skill = '';
+        this.startTextAnimation();
+      });
+    });
+  }
+
+  verifyIsProjectPage(): boolean {
+    return this.router.url === '/projects';
+  }
+
+  initialize() {
+    if (!this.verifyIsProjectPage())
+      this.startTextAnimation();
   }
 
   ngOnInit(): void {
-    this.changeSkillOnHero();
+    this.initialize();
   }
 }
 

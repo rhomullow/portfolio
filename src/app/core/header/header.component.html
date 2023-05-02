@@ -20,13 +20,20 @@
     </ul>
 
     <div class="navbar__actions">
-      <button class="navbar__actions__action"></button>
-      <button class="navbar__actions__action"></button>
+      <a class="navbar__actions__action">
+        <img src="../../../assets/icons/switch.svg" alt="" />
+      </a>
     </div>
   </section>
 
-  <section class="hero">
+  <section class="hero" *ngIf="!verifyIsProjectPage()">
     <h1>Rômulo Silva</h1>
-    <p>{{ skill }}</p>
+    <p class="hero__skills" #heroSkills>
+      {{ skill }} <span class="hero__skills__bar" aria-hidden="true"></span>
+    </p>
+  </section>
+
+  <section class="page-title" *ngIf="verifyIsProjectPage()">
+    <h1>Projetos</h1>
   </section>
 </header>

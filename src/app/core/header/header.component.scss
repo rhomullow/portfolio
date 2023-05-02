@@ -37,5 +37,47 @@
 }
 
 .hero {
-  padding: 70px 0;
+  display: grid;
+  justify-content: start;
+  padding: 135px 0 75px 0;
+}
+.hero h1,
+.hero p {
+  margin: 0;
+}
+.hero__skills {
+  font-size: 48px;
+  line-height: 58px;
+}
+.hero__skills--completed {
+  background: black;
+  color: white;
+}
+.hero__skills--completed {
+  background: black;
+  color: white;
+}
+.hero__skills--completed .hero__skills__bar {
+  border-color: white;
+}
+
+.page-title {
+  padding: 40px 0 1px 0;
+}
+
+.hero__skills__bar {
+  border-right: 0.25em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .hero__skills {
+    font-size: 24px;
+  }
 }

@@ -9,7 +9,7 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     component: ListComponent,
-    title: 'Rômulo Silva - Projetos',
+    title: 'Projetos',
   },
   {
     path: ':projectId',
@@ -21,4 +21,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ProjectRoutingModule {}
+export class ProjectRoutingModule { }
