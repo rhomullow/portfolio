@@ -1,23 +1,15 @@
 :root {
-  --primary-100: rgb(219, 199, 229);
-  --primary-200: rgb(197, 161, 214);
-  --primary-300: rgb(176, 121, 199);
-  --primary-400: rgb(160, 89, 187);
-  --primary-500: rgb(144, 57, 175);
-  --primary-600: rgb(135, 51, 169);
-  --primary-700: rgb(123, 41, 160);
-  --primary-800: rgb(113, 34, 153);
-  --primary-900: rgb(97, 18, 139);
+  --primary: rgb(142, 119, 234);
 
   --body: rgb(238, 238, 238);
-  --color: rgb(59, 44, 68);
+  --color: rgb(37, 37, 37);
   --shadow: rgba(0, 0, 0, 0.25);
 
   --padding: 20px 12vw;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --body: rgba(0, 0, 0, 0.25);
-  }
+:root .dark {
+  --body: rgb(80, 80, 80);
+  --color: rgb(238, 238, 238);
+  --shadow: rgba(0, 0, 0, 0.25);
 }

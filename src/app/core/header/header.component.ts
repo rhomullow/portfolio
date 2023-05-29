@@ -1,6 +1,11 @@
 import { Router } from '@angular/router';
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 
+enum Mode {
+  LIGHT = 'light',
+  DARK = 'dark',
+};
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -19,6 +24,8 @@ export class HeaderComponent implements OnInit {
   skill = '';
   skills = ['frontend developer', 'UX designer like', 'responsive UI', 'angular components'];
   promiseChar = Promise.resolve();
+
+  themeMode = Mode;
 
   startTextAnimation() {
     this.skills.forEach((word) => {
@@ -51,7 +58,28 @@ export class HeaderComponent implements OnInit {
     return this.router.url === '/projects';
   }
 
+  updateCurrentTheme(mode: Mode) {
+    sessionStorage.setItem('theme', mode);
+  }
+
+  toggleTheme() {
+    let status = document.body.classList.toggle(this.themeMode.DARK);
+
+    if (status) this.updateCurrentTheme(Mode.DARK)
+    else this.updateCurrentTheme(Mode.LIGHT)
+  }
+
+  verifyThemeModeOnSession() {
+    let currentMode = sessionStorage.getItem('theme');
+    if (currentMode) {
+      if (currentMode === Mode.DARK) document.body.classList.add(this.themeMode.DARK);
+      if (currentMode === Mode.LIGHT) document.body.classList.remove(this.themeMode.LIGHT);
+    }
+  }
+
   initialize() {
+    this.verifyThemeModeOnSession();
+
     if (!this.verifyIsProjectPage())
       this.startTextAnimation();
   }
