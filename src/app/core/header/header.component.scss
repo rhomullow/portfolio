@@ -1,0 +1,83 @@
+.header {
+  background-color: var(--primary);
+}
+
+.navbar,
+.navbar__links,
+.navbar__actions {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.navbar__logo {
+  position: absolute;
+  top: 0;
+  padding: 20px 0;
+}
+
+.navbar__links {
+  gap: 40px;
+  padding: 0;
+  list-style: none;
+  font-weight: 700;
+  margin: 20px 0;
+  justify-content: center;
+}
+
+.navbar__links__link a {
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.navbar__actions {
+  justify-content: end;
+  gap: 0;
+}
+
+.hero {
+  display: grid;
+  justify-content: start;
+  padding: 135px 0 75px 0;
+}
+.hero h1,
+.hero p {
+  margin: 0;
+}
+.hero__skills {
+  font-size: 48px;
+  line-height: 58px;
+}
+.hero__skills--completed {
+  background: black;
+  color: white;
+}
+.hero__skills--completed {
+  background: black;
+  color: white;
+}
+.hero__skills--completed .hero__skills__bar {
+  border-color: white;
+}
+
+.page-title {
+  padding: 40px 0 1px 0;
+}
+
+.hero__skills__bar {
+  border-right: 0.25em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .hero__skills {
+    font-size: 24px;
+  }
+}

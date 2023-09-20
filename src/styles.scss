@@ -1,9 +1,25 @@
 @import "palettes.scss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
 * {
   color: var(--color);
+  font-family: "Inter", sans-serif;
 }
 
 body {
+  display: grid;
+  margin: 0;
   background: var(--body);
+}
+
+header,
+footer {
+  padding: 0 12vw;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 58px;
+}
+h2 {
 }

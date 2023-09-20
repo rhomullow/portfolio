@@ -1,0 +1,39 @@
+<header class="header">
+  <section class="navbar">
+    <img
+      src="../../../assets/img/logo.svg"
+      alt="Rômulo Silva - Developer"
+      class="navbar__logo"
+    />
+
+    <div></div>
+
+    <ul class="navbar__links">
+      <li class="navbar__links__link" *ngFor="let link of links">
+        <a
+          [routerLink]="link.href"
+          routerLinkActive="navbar__links__link:active"
+        >
+          {{ link.label }}
+        </a>
+      </li>
+    </ul>
+
+    <div class="navbar__actions">
+      <a class="navbar__actions__action" (click)="toggleTheme()">
+        <img src="../../../assets/icons/switch.svg" alt="" />
+      </a>
+    </div>
+  </section>
+
+  <section class="hero" *ngIf="!verifyIsProjectPage()">
+    <h1>Rômulo Silva</h1>
+    <p class="hero__skills" #heroSkills>
+      {{ skill }} <span class="hero__skills__bar" aria-hidden="true"></span>
+    </p>
+  </section>
+
+  <section class="page-title" *ngIf="verifyIsProjectPage()">
+    <h1>Projetos</h1>
+  </section>
+</header>

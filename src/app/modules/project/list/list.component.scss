@@ -1,0 +1,8 @@
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, max(385px));
+  justify-content: space-evenly;
+  gap: 20px;
+  padding: var(--padding);
+  background: var(--body);
+}
