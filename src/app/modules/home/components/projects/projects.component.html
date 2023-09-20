@@ -1,0 +1,10 @@
+<div class="projects">
+  <h2>Projetos</h2>
+
+  <div class="projects__items">
+    <app-project *ngFor="let project of projects.slice(0, 3)" [info]="project"></app-project>
+  </div>
+  <a class="projects__more" [routerLink]="['/projects']" *ngIf="projects.length > 3">
+    VEJA MAIS <i class="projects__more__arrow"></i>
+  </a>
+</div>
