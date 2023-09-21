@@ -79,6 +79,7 @@
     radial-gradient(at 40% 90%, rgba(245, 66, 200, 1) 0px, transparent 55%),
     radial-gradient(at 80% 13%, rgba(232, 157, 110) 0px, transparent 80%),
     radial-gradient(at 88% 11%, rgba(239, 121, 90, 1) 0px, transparent 60%);
+  -webkit-user-select: none;
   user-select: none;
 }
 .profile__photo {
@@ -101,7 +102,7 @@
 .info__skills {
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 10px;
 }
 .info__bio {
