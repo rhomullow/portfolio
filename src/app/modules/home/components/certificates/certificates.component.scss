@@ -1,0 +1,39 @@
+.certificates {
+  display: grid;
+  padding: var(--padding);
+  background: var(--body);
+  width: calc(100vw - 24vw);
+}
+
+.certificates__items__item {
+  padding: 16px;
+  background: #d9d9d9;
+  border: 2px solid;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+.certificates__items__item--certifications {
+  border-color: #fff7d0;
+}
+.certificates__items__item--training {
+  border-color: #00b9ff;
+}
+.certificates__items__item--courses {
+  border-color: #dbc7e5;
+}
+
+.certificates__items__item__name {
+  text-align: center;
+  margin: 0;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.certificates__items__item__img {
+  border-radius: 10px;
+}

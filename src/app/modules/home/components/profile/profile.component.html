@@ -1,0 +1,29 @@
+<div class="profile">
+  <div class="profile__photo"></div>
+  <div class="profile__info">
+    <h2>Sobre mim</h2>
+    <div class="profile__info__skills">
+      <app-pill [text]="skill" *ngFor="let skill of skills"></app-pill>
+    </div>
+    <p class="profile__info__bio">
+      Desenvolvedor com mais de 9 anos de experiência trabalhando
+      primariamente com desenvolvimento web. Com experiências como autônomo
+      facilitando a entrada de instituições de ensino na web, soluções
+      práticas para sistemas de análises geoespaciais. Atualmente focado em
+      aplicações web desenvolvidas com Angular, Angular Material além de
+      grande domínio em CSS3 puro e com um olhar apurado para questões de
+      usabilidade e interfaces limpas.
+    </p>
+    <div class="profile__info__contact">
+      <a href="https://www.linkedin.com/in/romulosilvam" target="_blank">
+        <img src="../../../assets/icons/linkedin.svg" alt="" />
+      </a>
+      <a href="https://github.com/rhomullow" target="_blank">
+        <img src="../../../assets/icons/github.svg" alt="" />
+      </a>
+      <a href="mailto:romulo.sm15@gmail.com" target="_blank">
+        <img src="../../../assets/icons/email.svg" alt="" />
+      </a>
+    </div>
+  </div>
+</div>

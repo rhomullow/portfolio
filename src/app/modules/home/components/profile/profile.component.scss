@@ -1,0 +1,81 @@
+.profile,
+.profile__info,
+.profile__info__skills,
+.profile__info__bio,
+.profile__info__contact {
+  display: grid;
+}
+
+.profile {
+  padding: var(--padding);
+  grid-auto-flow: column;
+  gap: 60px;
+  background-color: var(--primary);
+  background-image: radial-gradient(
+      at 1% 0%,
+      rgba(142, 119, 234) 0px,
+      transparent 55%
+    ),
+    radial-gradient(at 40% 90%, var(--color-pink) 0px, transparent 55%),
+    radial-gradient(at 80% 13%, var(--color-yellow) 0px, transparent 80%),
+    radial-gradient(at 88% 11%, var(--color-orange) 0px, transparent 60%);
+  user-select: none;
+}
+.profile__photo {
+  width: 354px;
+  height: 354px;
+  border-radius: 50%;
+  box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.25);
+  background: url("../../../../../assets/img/profile.jpg") no-repeat right top;
+  background-size: 354px;
+  filter: brightness(90%);
+}
+.profile__photo:hover {
+  filter: brightness(100%);
+}
+
+.profile__info {
+  gap: 20px;
+  align-content: start;
+}
+.profile__info__skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 10px;
+}
+.profile__info__bio {
+  font-size: 14px;
+  line-height: 22px;
+}
+.profile__info__contact {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  gap: 20px;
+}
+.profile__info__contact img {
+  opacity: 0.5;
+}
+.profile__info__contact img:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .profile {
+    gap: 20px;
+  }
+
+  .profile,
+  .projects__items {
+    grid-auto-flow: row;
+    grid-template-columns: unset;
+  }
+
+  .profile__photo {
+    width: 200px;
+    height: 200px;
+    background-size: 200px;
+    justify-self: center;
+  }
+}
