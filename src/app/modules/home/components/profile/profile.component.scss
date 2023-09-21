@@ -19,6 +19,7 @@
     radial-gradient(at 40% 90%, var(--color-pink) 0px, transparent 55%),
     radial-gradient(at 80% 13%, var(--color-yellow) 0px, transparent 80%),
     radial-gradient(at 88% 11%, var(--color-orange) 0px, transparent 60%);
+  -webkit-user-select: none;
   user-select: none;
 }
 .profile__photo {
@@ -41,7 +42,7 @@
 .profile__info__skills {
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 10px;
 }
 .profile__info__bio {

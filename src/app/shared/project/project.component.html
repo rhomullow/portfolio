@@ -1,5 +1,10 @@
 <div class="card">
-  <img [src]="info.thumb" [alt]="info.title" class="card__img" />
+  <img
+    [src]="info.thumb"
+    class="card__img"
+    [title]="info.title"
+    [alt]="info.title"
+  />
   <div class="card__info">
     <p class="card__info__title">{{ info.title }}</p>
     <p class="card__info__body">{{ info.description }}</p>
