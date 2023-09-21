@@ -11,7 +11,7 @@ export const projects = [
     title: 'Project title',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan.',
-    thumb: '.assets/img/project_thumb.png',
+    thumb: 'assets/img/project_thumb.png',
   },
   {
     title: 'Project title',
