@@ -10,7 +10,6 @@
   padding-bottom: 40px;
   background: var(--body);
   padding: var(--padding);
-  width: calc(100vw - 24vw);
 }
 .projects h2 {
   margin: 0;
@@ -20,6 +19,8 @@
   gap: 20px;
   grid-template-columns: repeat(3, max(385px));
   justify-content: space-between;
+  width: calc(100vw - 24vw);
+  overflow-y: overlay;
 }
 .projects__more {
   grid-auto-flow: column;
