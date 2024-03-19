@@ -1,0 +1,9 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.app :last-child {
+  margin-top: auto;
+}

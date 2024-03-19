@@ -1,19 +1,10 @@
 <header class="header">
   <section class="navbar">
-    <img
-      src="assets/img/logo.svg"
-      alt="Rômulo Silva - Developer"
-      class="navbar__logo"
-    />
+    <img src="assets/img/logo.svg" alt="Rômulo Silva - Developer" class="navbar__logo" />
 
-    <div></div>
-
-    <ul class="navbar__links">
+    <ul class="navbar__links" *ngIf="false">
       <li class="navbar__links__link" *ngFor="let link of links">
-        <a
-          [routerLink]="link.href"
-          routerLinkActive="navbar__links__link:active"
-        >
+        <a [routerLink]="link.href" routerLinkActive="navbar__links__link:active">
           {{ link.label }}
         </a>
       </li>
@@ -23,6 +14,12 @@
       <a class="navbar__actions__action" (click)="toggleTheme()">
         <img src="assets/icons/switch.svg" alt="" />
       </a>
+    </div>
+
+    <div class="navbar__burguer-btn">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </section>
 

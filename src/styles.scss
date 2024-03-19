@@ -1,5 +1,4 @@
-@import "palettes.scss";
-@import "dimensions.scss";
+@import "palettes.scss", "dimensions.scss";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
 * {
@@ -12,6 +11,7 @@ body {
   display: grid;
   margin: 0;
   background: var(--body);
+  min-height: 100vh;
 }
 
 header,
@@ -22,4 +22,11 @@ footer {
 h1 {
   font-size: 48px;
   line-height: 58px;
+}
+
+@media (max-width: #{$breakpoint-md}) {
+  header,
+  footer {
+    padding: 0 16px;
+  }
 }

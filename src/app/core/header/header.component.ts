@@ -70,11 +70,15 @@ export class HeaderComponent implements OnInit {
   }
 
   verifyThemeModeOnSession() {
-    let currentMode = sessionStorage.getItem('theme');
-    if (currentMode) {
-      if (currentMode === Mode.DARK) document.body.classList.add(this.themeMode.DARK);
-      if (currentMode === Mode.LIGHT) document.body.classList.remove(this.themeMode.LIGHT);
-    }
+    const deviceMode = window.matchMedia("(prefers-color-scheme: dark)");
+    let initMode = sessionStorage.getItem('theme') as Mode.LIGHT | Mode.DARK;
+
+    if (!initMode)
+      deviceMode.matches ? (initMode = Mode.DARK) : (initMode = Mode.LIGHT);
+
+    this.updateCurrentTheme(initMode);
+    if (deviceMode.matches) document.body.classList.add(initMode);
+    else document.body.classList.remove(Mode.DARK)
   }
 
   initialize() {
