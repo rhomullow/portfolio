@@ -1,11 +1,16 @@
 .certificates {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   padding: var(--padding);
   background: var(--body);
-  width: calc(100vw - 24vw);
 }
 
+.certificates__items {
+  display: flex;
+  gap: 8px;
+}
 .certificates__items__item {
+  cursor: pointer;
   padding: 16px;
   background: #d9d9d9;
   border: 2px solid;
@@ -35,6 +40,5 @@
 }
 
 .certificates__items__item__img {
-  display: none;
   border-radius: 10px;
 }

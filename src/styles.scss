@@ -24,6 +24,23 @@ h1 {
   line-height: 58px;
 }
 
+:focus-visible {
+  outline: none;
+}
+
+/* Scrolbar */
+::-webkit-scrollbar-track {
+  background-color: var(--body);
+}
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: var(--body);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 8px;
+}
+
 @media (max-width: #{$breakpoint-md}) {
   header,
   footer {

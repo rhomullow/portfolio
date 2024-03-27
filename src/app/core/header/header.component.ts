@@ -4,7 +4,7 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 enum Mode {
   LIGHT = 'light',
   DARK = 'dark',
-};
+}
 
 @Component({
   selector: 'app-header',
@@ -14,7 +14,7 @@ enum Mode {
 export class HeaderComponent implements OnInit {
   @ViewChild('heroSkills') heroSkills!: ElementRef;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   links = [
     { label: 'Início', href: ['/'] },
@@ -22,7 +22,12 @@ export class HeaderComponent implements OnInit {
   ];
 
   skill = '';
-  skills = ['frontend developer', 'UX designer like', 'responsive UI', 'angular components'];
+  skills = [
+    'frontend developer',
+    'UX designer like',
+    'responsive UI',
+    'angular components',
+  ];
   promiseChar = Promise.resolve();
 
   themeMode = Mode;
@@ -32,16 +37,22 @@ export class HeaderComponent implements OnInit {
       word.split('').forEach((char, indexChar) => {
         this.promiseChar = this.promiseChar.then(() => {
           this.skill += char;
-          return new Promise(resolve => {
+          return new Promise((resolve) => {
             if (indexChar === word.length - 1) {
               setTimeout(resolve, indexChar * 100);
 
               if (this.heroSkills)
-                setTimeout(() => { this.heroSkills.nativeElement.classList.add('hero__skills--completed'); }, indexChar * 25);
-
+                setTimeout(() => {
+                  this.heroSkills.nativeElement.classList.add(
+                    'hero__skills--completed'
+                  );
+                }, indexChar * 25);
             } else {
               setTimeout(resolve, 200);
-              if (this.heroSkills) this.heroSkills.nativeElement.classList.remove('hero__skills--completed');
+              if (this.heroSkills)
+                this.heroSkills.nativeElement.classList.remove(
+                  'hero__skills--completed'
+                );
             }
           });
         });
@@ -65,12 +76,12 @@ export class HeaderComponent implements OnInit {
   toggleTheme() {
     let status = document.body.classList.toggle(this.themeMode.DARK);
 
-    if (status) this.updateCurrentTheme(Mode.DARK)
-    else this.updateCurrentTheme(Mode.LIGHT)
+    if (status) this.updateCurrentTheme(Mode.DARK);
+    else this.updateCurrentTheme(Mode.LIGHT);
   }
 
   verifyThemeModeOnSession() {
-    const deviceMode = window.matchMedia("(prefers-color-scheme: dark)");
+    const deviceMode = window.matchMedia('(prefers-color-scheme: dark)');
     let initMode = sessionStorage.getItem('theme') as Mode.LIGHT | Mode.DARK;
 
     if (!initMode)
@@ -78,18 +89,16 @@ export class HeaderComponent implements OnInit {
 
     this.updateCurrentTheme(initMode);
     if (deviceMode.matches) document.body.classList.add(initMode);
-    else document.body.classList.remove(Mode.DARK)
+    else document.body.classList.remove(Mode.DARK);
   }
 
   initialize() {
-    this.verifyThemeModeOnSession();
+    //this.verifyThemeModeOnSession();
 
-    if (!this.verifyIsProjectPage())
-      this.startTextAnimation();
+    if (!this.verifyIsProjectPage()) this.startTextAnimation();
   }
 
   ngOnInit(): void {
     this.initialize();
   }
 }
-

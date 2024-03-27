@@ -2,10 +2,23 @@
   <h2 class="certificates__title">Certificados</h2>
   <div class="certificates__categories"></div>
   <div class="certificates__items">
-    <div class="certificates__items__item"
-      [ngClass]="{'certificates__items__item--training' : true, 'certificates__items__item--courses' : false, 'certificates__items__item--certifications' : false}">
-      <img class="certificates__items__item__img" src="assets/img/doc.png" alt="">
-      <p class="certificates__items__item__name">Teste</p>
+    <div
+      *ngFor="let certificate of certificates"
+      (click)="openDetailsDialog(certificate)"
+      class="certificates__items__item"
+      [ngClass]="{
+        'certificates__items__item--training': certificate.type === 'training',
+        'certificates__items__item--courses': certificate.type === 'courses',
+        'certificates__items__item--certifications':
+          certificate.type === 'certifications'
+      }"
+    >
+      <img
+        class="certificates__items__item__img"
+        [src]="'assets/img/certificates/' + certificate.file"
+        [alt]="certificate.title"
+      />
+      <p class="certificates__items__item__name">{{ certificate.title }}</p>
     </div>
   </div>
 </section>
