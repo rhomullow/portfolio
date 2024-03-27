@@ -23,13 +23,6 @@ export class CertificatesComponent {
       description: '',
       file: 'doc.png',
     },
-    {
-      type: 'courses',
-      title: 'AZ-900',
-      partner: 'Microsoft',
-      description: '',
-      file: 'doc.png',
-    },
   ];
 
   constructor(private readonly _dialogService: DialogService) {}
