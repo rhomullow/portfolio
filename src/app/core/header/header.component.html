@@ -6,9 +6,7 @@
       class="navbar__logo"
     />
 
-    <div></div>
-
-    <ul class="navbar__links">
+    <ul class="navbar__links" *ngIf="false">
       <li class="navbar__links__link" *ngFor="let link of links">
         <a
           [routerLink]="link.href"
@@ -19,10 +17,16 @@
       </li>
     </ul>
 
-    <div class="navbar__actions">
+    <div class="navbar__actions" *ngIf="false">
       <a class="navbar__actions__action" (click)="toggleTheme()">
         <img src="assets/icons/switch.svg" alt="" />
       </a>
+    </div>
+
+    <div class="navbar__burguer-btn" *ngIf="false">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </section>
 

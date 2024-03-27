@@ -1,0 +1,9 @@
+<dialog class="dialog" [open]="dialog.open" #dialogSelector>
+  <div (click)="closeDialog()" class="dialog__close">
+    <i class="fa-solid fa-xmark"></i>
+  </div>
+  <div class="dialog__content">
+    <p>{{ dialog.content?.title }}</p>
+    <p>{{ dialog.content?.description }}</p>
+  </div>
+</dialog>

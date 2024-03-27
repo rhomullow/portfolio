@@ -1,3 +1,5 @@
+@import "../../../dimensions.scss";
+
 .header {
   background-color: var(--primary);
 }
@@ -12,8 +14,7 @@
 }
 
 .navbar__logo {
-  position: absolute;
-  top: 0;
+  max-width: 50px;
   padding: 20px 0;
 }
 
@@ -34,6 +35,17 @@
 .navbar__actions {
   justify-content: end;
   gap: 0;
+}
+
+.navbar__logo,
+.navbar__links__link,
+.navbar__actions__action,
+.navbar__burguer-btn {
+  cursor: pointer;
+}
+
+.navbar__burguer-btn {
+  display: none;
 }
 
 .hero {
@@ -76,7 +88,38 @@
   }
 }
 
-@media screen and (max-width: 720px) {
+@media (max-width: #{$breakpoint-md}) {
+  .navbar__logo {
+    max-width: 30px;
+  }
+
+  .navbar__links {
+    display: none;
+  }
+
+  .navbar__burguer-btn {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid var(--primary-darker);
+    justify-self: end;
+    gap: 4px;
+  }
+
+  .navbar__burguer-btn:hover {
+    background: var(--primary-darker);
+  }
+
+  .navbar__burguer-btn span {
+    border-top: 2px solid var(--body);
+    width: 20px;
+  }
+
+  .navbar__actions {
+    display: none;
+  }
+
   .hero__skills {
     font-size: 24px;
   }

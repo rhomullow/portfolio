@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { PillComponent, ProjectComponent } from './index';
-
+import { PillComponent, ProjectComponent, DialogComponent } from './index';
 
 @NgModule({
-  declarations: [PillComponent, ProjectComponent],
-  imports: [
-    CommonModule,
-  ],
-  exports: [PillComponent, ProjectComponent],
+  declarations: [PillComponent, ProjectComponent, DialogComponent],
+  imports: [CommonModule],
+  exports: [PillComponent, ProjectComponent, DialogComponent],
 })
-export class SharedModule { }
+export class SharedModule {}

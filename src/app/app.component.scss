@@ -1,0 +1,12 @@
+.app {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: 100%;
+}
+.app__footer {
+  margin-top: auto;
+}
+.app__dialog {
+  position: absolute;
+}

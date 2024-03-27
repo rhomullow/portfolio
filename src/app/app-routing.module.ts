@@ -25,12 +25,12 @@ const routes: Routes = [
     component: HomeComponent,
     title: 'Portifólio',
   },
-  {
+  /* {
     path: 'projects',
     loadChildren: () =>
       import('./modules/project/project.module').then((m) => m.ProjectModule),
     title: 'Projetos',
-  },
+  }, */
 ];
 
 @NgModule({

@@ -1,0 +1,37 @@
+.dialog {
+  position: fixed;
+  inset-block-start: 0px;
+  inset-block-end: 0px;
+  max-width: calc(100% - 2em - 6px);
+  max-height: calc(100% - 2em - 6px);
+  user-select: text;
+  visibility: visible;
+  overflow: auto;
+  border: 1px solid var(--shadow);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 2px 4px 8px var(--shadow);
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dialog[open] {
+  display: flex;
+  transition: 300ms ease-in-out;
+}
+.dialog::backdrop {
+  opacity: 0.99;
+  backdrop-filter: blur(100px);
+}
+.dialog:-internal-dialog-in-top-layer::backdrop {
+  position: fixed;
+  inset: 0px;
+}
+
+.dialog__close {
+  align-self: end;
+  cursor: pointer;
+}
+
+.dialog__content {
+}
