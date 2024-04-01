@@ -3,8 +3,11 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 import { DialogService } from './dialog.service';
 
+export type DialogType = 'certificate' | 'status';
+
 interface Dialog {
   open: boolean;
+  type: DialogType;
   content?: any;
 }
 
@@ -14,7 +17,7 @@ interface Dialog {
   styleUrls: ['./dialog.component.scss'],
 })
 export class DialogComponent implements OnInit {
-  dialog: Dialog = { open: false };
+  dialog: Dialog = { open: false, type: 'status' };
 
   @ViewChild('dialogSelector', { static: true })
   elDialog!: ElementRef<HTMLDialogElement>;

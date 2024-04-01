@@ -3,7 +3,7 @@
   <div class="certificates__categories"></div>
   <div class="certificates__items">
     <div
-      *ngFor="let certificate of certificates"
+      *ngFor="let certificate of certificates$ | async"
       (click)="openDetailsDialog(certificate)"
       class="certificates__items__item"
       [ngClass]="{
@@ -18,7 +18,14 @@
         [src]="'assets/img/certificates/' + certificate.file"
         [alt]="certificate.title"
       />
-      <p class="certificates__items__item__name">{{ certificate.title }}</p>
+      <div class="certificates__items__item__info">
+        <span class="certificates__items__item__info__partner">
+          {{ certificate.partner }}
+        </span>
+        <p class="certificates__items__item__info__name">
+          {{ certificate.title }}
+        </p>
+      </div>
     </div>
   </div>
 </section>
