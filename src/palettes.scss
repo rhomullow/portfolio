@@ -9,11 +9,18 @@
   --body: rgb(238, 238, 238);
   --color: rgb(37, 37, 37);
   --color-secondary: rgb(68, 68, 68);
+
   --shadow: rgba(0, 0, 0, 0.25);
 
   --card-bg: rgb(217, 217, 217);
 
+  --color-certifications: var(--primary);
+  --color-training: var(--color-pink);
+  --color-courses: var(--color-orange);
+
   --padding: 20px 12vw;
+
+  --white: #eeeeee;
 }
 
 :root .dark {
