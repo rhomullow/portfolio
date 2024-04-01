@@ -1,31 +1,76 @@
 <section class="certificates">
   <h2 class="certificates__title">Certificados</h2>
-  <div class="certificates__categories"></div>
-  <div class="certificates__items">
-    <div
-      *ngFor="let certificate of certificates$ | async"
-      (click)="openDetailsDialog(certificate)"
-      class="certificates__items__item"
+  <div class="certificates__categories">
+    <button
+      type="button"
+      (click)="changeFilter(0)"
+      class="certificates__categories__btn"
       [ngClass]="{
-        'certificates__items__item--training': certificate.type === 'training',
-        'certificates__items__item--courses': certificate.type === 'courses',
-        'certificates__items__item--certifications':
-          certificate.type === 'certifications'
+        'certificates__categories__btn--active': actualFilter.length > 2
       }"
     >
-      <img
-        class="certificates__items__item__img"
-        [src]="'assets/img/certificates/' + certificate.file"
-        [alt]="certificate.title"
-      />
-      <div class="certificates__items__item__info">
-        <span class="certificates__items__item__info__partner">
-          {{ certificate.partner }}
-        </span>
-        <p class="certificates__items__item__info__name">
-          {{ certificate.title }}
-        </p>
+      Todos
+    </button>
+    <button
+      type="button"
+      (click)="changeFilter(1)"
+      class="certificates__categories__btn btn-certifications"
+      [ngClass]="{
+        'certificates__categories__btn--active':
+          actualFilter[0] === 'certifications' && actualFilter.length === 1
+      }"
+    >
+      Certificações
+    </button>
+    <button
+      type="button"
+      (click)="changeFilter(2)"
+      class="certificates__categories__btn btn-courses"
+      [ngClass]="{
+        'certificates__categories__btn--active': actualFilter[0] === 'courses'
+      }"
+    >
+      Cursos
+    </button>
+    <button
+      type="button"
+      (click)="changeFilter(3)"
+      class="certificates__categories__btn btn-training"
+      [ngClass]="{
+        'certificates__categories__btn--active': actualFilter[0] === 'training'
+      }"
+    >
+      Treinamentos
+    </button>
+  </div>
+  <div class="certificates__items">
+    <ng-container *ngFor="let certificate of certificates$ | async">
+      <div
+        *ngIf="actualFilter.includes(certificate.type)"
+        (click)="openDetailsDialog(certificate)"
+        class="certificates__items__item"
+        [ngClass]="{
+          'certificates__items__item--training':
+            certificate.type === 'training',
+          'certificates__items__item--courses': certificate.type === 'courses',
+          'certificates__items__item--certifications':
+            certificate.type === 'certifications'
+        }"
+      >
+        <img
+          class="certificates__items__item__img"
+          [src]="'assets/img/certificates/' + certificate.file"
+          [alt]="certificate.title"
+        />
+        <div class="certificates__items__item__info">
+          <span class="certificates__items__item__info__partner">
+            {{ certificate.partner }}
+          </span>
+          <p class="certificates__items__item__info__name">
+            {{ certificate.title }}
+          </p>
+        </div>
       </div>
-    </div>
+    </ng-container>
   </div>
 </section>

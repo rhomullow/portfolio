@@ -24,6 +24,12 @@ h1 {
   line-height: 58px;
 }
 
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
 :focus-visible {
   outline: none;
 }

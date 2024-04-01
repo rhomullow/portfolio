@@ -1,8 +1,40 @@
 .certificates {
   display: flex;
+  gap: 16px;
   flex-direction: column;
   padding: var(--padding);
   background: var(--body);
+}
+
+.certificates__categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.certificates__categories__btn {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 20px;
+  border: 1px solid var(--color-secondary);
+  background-color: var(--white);
+}
+.certificates__categories__btn:hover,
+.certificates__categories__btn--active {
+  color: var(--white);
+  background-color: var(--color-secondary);
+}
+
+.btn-certifications.certificates__categories__btn--active,
+.btn-certifications.certificates__categories__btn:hover {
+  background-color: var(--color-certifications);
+}
+.btn-courses.certificates__categories__btn--active,
+.btn-courses.certificates__categories__btn:hover {
+  background-color: var(--color-courses);
+}
+.btn-training.certificates__categories__btn--active,
+.btn-training.certificates__categories__btn:hover {
+  background-color: var(--color-training);
 }
 
 .certificates__items {
@@ -22,14 +54,18 @@
   row-gap: 8px;
   max-width: 200px;
 }
+
+.btn-certifications,
 .certificates__items__item--certifications {
-  border-color: #fff7d0;
+  border-color: var(--color-certifications);
 }
-.certificates__items__item--training {
-  border-color: #00b9ff;
-}
+.btn-courses,
 .certificates__items__item--courses {
-  border-color: #dbc7e5;
+  border-color: var(--color-courses);
+}
+.btn-training,
+.certificates__items__item--training {
+  border-color: var(--color-training);
 }
 
 .certificates__items__item__info {
