@@ -1,9 +1,49 @@
 <dialog class="dialog" [open]="dialog.open" #dialogSelector>
   <div (click)="closeDialog()" class="dialog__close">
-    <i class="fa-solid fa-xmark"></i>
+    <i class="fa-solid fa-xmark fa-lg"></i>
   </div>
-  <div class="dialog__content">
-    <p>{{ dialog.content?.title }}</p>
-    <p>{{ dialog.content?.description }}</p>
+  <div class="dialog__content {{ dialog.type }}">
+    <ng-container *ngIf="dialog.type === 'status'">
+      <ng-container *ngTemplateOutlet="status"></ng-container>
+    </ng-container>
+    <ng-container *ngIf="dialog.type === 'certificate'">
+      <ng-container *ngTemplateOutlet="certificate"></ng-container>
+    </ng-container>
   </div>
 </dialog>
+
+<ng-template #certificate>
+  <div class="dialog__content__certificate">
+    <div class="dialog__content__certificate__info">
+      <div class="dialog__content__certificate__info__header">
+        <span class="dialog__content__certificate__info__header__partner">
+          {{ dialog.content?.partner }}
+        </span>
+        <h1 class="dialog__content__certificate__info__header__title">
+          {{ dialog.content?.title }}
+        </h1>
+      </div>
+      <p
+        class="dialog__content__certificate__info__description"
+        *ngIf="dialog.content && dialog.content.description"
+      >
+        {{ dialog.content?.description }}
+      </p>
+      <a
+        class="dialog__content__certificate__info__link"
+        target="_blank"
+        [href]="dialog.content?.link"
+      >
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        Clique aqui para acesso ao certificado.
+      </a>
+    </div>
+    <img
+      [src]="'assets/img/certificates/' + dialog.content?.file"
+      alt="Certificado referente a dialog.content?.title"
+      class="dialog__content__certificate__thumb"
+    />
+  </div>
+</ng-template>
+
+<ng-template #status> Status </ng-template>

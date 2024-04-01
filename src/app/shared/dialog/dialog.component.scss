@@ -2,8 +2,9 @@
   position: fixed;
   inset-block-start: 0px;
   inset-block-end: 0px;
-  max-width: calc(100% - 2em - 6px);
-  max-height: calc(100% - 2em - 6px);
+  width: 100%;
+  max-width: 70vh;
+  max-height: 80vh;
   user-select: text;
   visibility: visible;
   overflow: auto;
@@ -12,7 +13,8 @@
   padding: 24px;
   box-shadow: 2px 4px 8px var(--shadow);
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
+  overflow: hidden;
 }
 
 .dialog[open] {
@@ -34,4 +36,56 @@
 }
 
 .dialog__content {
+  overflow-x: overlay;
+}
+
+/* Certificate CSS */
+.dialog__content__certificate {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.dialog__content__certificate__thumb {
+  height: fit-content;
+  max-width: 300px;
+}
+
+.dialog__content__certificate__info,
+.dialog__content__certificate__info__header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dialog__content__certificate__info__header__title {
+  margin: 0;
+  font-size: 2rem;
+  line-height: normal;
+}
+
+.dialog__content__certificate__info__description {
+  margin: 0;
+}
+
+.dialog__content__certificate__info__link {
+  margin-top: 16px;
+}
+
+@media (width < 769px) {
+  .dialog {
+    width: calc(100% - 2em - 16px);
+    height: calc(100% - 2em - 16px);
+    max-width: unset;
+    max-height: unset;
+    padding: 16px;
+  }
+
+  .dialog__content__certificate {
+    flex-wrap: wrap-reverse;
+  }
+
+  .dialog__content__certificate__thumb {
+    display: none;
+  }
 }
