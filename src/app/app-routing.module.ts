@@ -1,5 +1,10 @@
+import {
+  Routes,
+  RouterModule,
+  TitleStrategy,
+  RouterStateSnapshot,
+} from '@angular/router';
 import { Injectable, NgModule } from '@angular/core';
-import { RouterModule, RouterStateSnapshot, Routes, TitleStrategy } from '@angular/router';
 
 import { HomeComponent } from './modules/home/home.component';
 import { Title } from '@angular/platform-browser';
@@ -23,7 +28,7 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     component: HomeComponent,
-    title: 'Portifólio',
+    title: 'Perfil profissional e portifolio',
   },
   /* {
     path: 'projects',
@@ -39,8 +44,8 @@ const routes: Routes = [
   providers: [
     {
       provide: TitleStrategy,
-      useClass: TemplatePageTitleStrategy
-    }
-  ]
+      useClass: TemplatePageTitleStrategy,
+    },
+  ],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
