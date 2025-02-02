@@ -1,0 +1,8 @@
+<ng-content select="app-accordion-item-header"></ng-content>
+
+<div
+  class="accordion__item__content"
+  [ngClass]="{ 'accordion__item__content--active': expanded }"
+>
+  <ng-content></ng-content>
+</div>

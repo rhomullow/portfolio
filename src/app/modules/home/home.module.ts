@@ -8,10 +8,15 @@ import { HomeComponent } from './home.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CertificatesComponent } from './components/certificates/certificates.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { AccordionModule } from './../../shared/accordion/accordion.module';
 
 @NgModule({
-  declarations: [HomeComponent, ProfileComponent, CertificatesComponent, ProjectsComponent],
-  imports: [CommonModule, SharedModule, RouterModule],
-  exports: [HomeComponent],
+  declarations: [
+    HomeComponent,
+    ProfileComponent,
+    CertificatesComponent,
+    ProjectsComponent,
+  ],
+  imports: [CommonModule, RouterModule, SharedModule, AccordionModule],
 })
-export class HomeModule { }
+export class HomeModule {}

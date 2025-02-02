@@ -1,0 +1,21 @@
+.accordion__item {
+  display: block;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.accordion__item:first-of-type {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.accordion__item:last-of-type {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.accordion__item__content {
+  display: none;
+}
+.accordion__item__content--active {
+  display: block;
+}
